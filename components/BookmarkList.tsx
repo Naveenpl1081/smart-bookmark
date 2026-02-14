@@ -91,7 +91,7 @@ export default function BookmarkList({ userId }: { userId: string }) {
       <div className="flex justify-between items-center">
         <p className="text-gray-400">Total: {bookmarks.length}</p>
         <p className="text-xs text-gray-500">
-          {isSubscribed ? '🟢 Live' : '🔴 Connecting...'}
+          {isSubscribed ? '🟢 Live' : ' Connecting...'}
         </p>
       </div>
       {bookmarks.map((b) => (
