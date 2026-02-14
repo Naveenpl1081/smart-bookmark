@@ -43,7 +43,7 @@ export default function BookmarkList({ userId }: { userId: string }) {
           table: 'bookmarks',
         },
         (payload: any) => {
-          console.log('✅ INSERT received via realtime:', payload);
+          console.log(' INSERT received via realtime:', payload);
           if (payload.new.user_id === userId) {
             setBookmarks((current) => {
               const exists = current.some(b => b.id === payload.new.id);
@@ -61,14 +61,14 @@ export default function BookmarkList({ userId }: { userId: string }) {
           table: 'bookmarks',
         },
         (payload: any) => {
-          console.log('🗑️ DELETE received via realtime:', payload);
+          console.log(' DELETE received via realtime:', payload);
           setBookmarks((current) => current.filter((b) => b.id !== payload.old.id));
         }
       )
       .subscribe((status) => {
         if (status === 'SUBSCRIBED') {
           setIsSubscribed(true);
-          console.log('✅ Realtime connected');
+          console.log('Realtime connected');
         }
       });
 

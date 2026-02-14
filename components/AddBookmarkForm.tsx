@@ -32,7 +32,7 @@ export default function AddBookmarkForm({ userId }: { userId: string }) {
         console.error("Error adding bookmark:", error);
         alert("Failed to add bookmark: " + error.message);
       } else {
-        console.log("✅ Bookmark added:", data);
+        console.log(" Bookmark added:", data);
         setTitle("");
         setUrl("");
         
